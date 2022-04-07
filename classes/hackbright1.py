@@ -1,7 +1,7 @@
 class HackbrightStudent:
     """A student at Hackbright."""
 
-    school = "Hackbright Academy"
+    hours_per_week = 40
 
     def __init__(self, student_name, pronouns="unspecified"):
         self.name = student_name
