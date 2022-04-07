@@ -7,6 +7,10 @@ class HackbrightStudent:
         self.name = student_name
         self.pronouns = pronouns
         self.grades = {}
+        self.has_graduated = False
+
+    def graduate(self):
+        self.has_graduated = True
 
     def introduce(self):
         print(f"Hi! My name is {self.name}. My pronouns are {self.pronouns}.")

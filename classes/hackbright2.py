@@ -7,49 +7,24 @@ class Hackbrighter:
         self.name = name
         self.title = title
         self.pronouns = pronouns
+        self.diet = diet
 
     def introduce(self):
         print(f"Hi! My name is {self.name}. My pronouns are {self.pronouns}.")
 
-        if self.title[0].lower() in "aeiou":
-            print(f"I'm an {self.title} at Hackbright.")
-        else:
-            print(f"I'm a {self.title} at Hackbright.")
+class Student(Hackbrighter):
+    """A student at Hackbright."""
 
+    has_lightning_talk = True
+    hours_per_week = 50
 
+    def __init__(self, name, pronouns="unspecified"):
+        super().__init__(name, "student", pronouns)
+        self.grades = {}
 
+    def introduce(self):
+        super().introduce()
+        print(f"I'm an excellent {self.title} at Hackbright.")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class Student(Hackbrighter):
-#     pass
+    def add_grade(self, assignment, score):
+        pass
