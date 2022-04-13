@@ -15,7 +15,7 @@
     <li>URL: {{ req_url }}</li>
     <li>Headers:
       <ul>
-      {% for tpl in req_headers %}
+      {% for tpl in req_headers.items() %}
         <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
       {% endfor %}
       </ul>

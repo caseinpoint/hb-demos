@@ -9,7 +9,7 @@
   <li>Response Code: {{ res_code }}</li>
   <li>Headers:
     <ul>
-      {% for tpl in res_headers %}
+      {% for tpl in res_headers.items() %}
         <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
       {% endfor %}
     </ul>
