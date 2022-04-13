@@ -8,23 +8,23 @@
 </head>
 <body>
   {% block body %}{% endblock %}
-  <h3>Here's your request data:</h3>
+  <h2>Here's your request data:</h2>
   <ul>
-    <li>Method: {{ rqst.method }}</li>
-    <li>Protocol: {{ rqst.scheme }}</li>
-    <li>URL: {{ rqst.url }}</li>
+    <li>Method: {{ request.method }}</li>
+    <li>Protocol: {{ request.scheme }}</li>
+    <li>URL: {{ request.url }}</li>
     <li>Headers:
       <ul>
-      {% for key, val in rqst.headers.items() %}
+      {% for key, val in request.headers.items() %}
         <li>{{ key }}: {{ val }}</li>
       {% endfor %}
       </ul>
     </li>
-    {% if rqst.form|length > 0 %}
+    {% if request.form|length > 0 %}
     <li>Body:
       <ul>
-      {% for key, val in rqst.form.items() %}
-        <li>{{ key] }}: {{ val }}</li>
+      {% for key, val in request.form.items() %}
+        <li>{{ key }}: {{ val }}</li>
       {% endfor %}
       </ul>
     </li>

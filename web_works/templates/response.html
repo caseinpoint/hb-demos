@@ -7,16 +7,16 @@
 <ul>
   <!-- protocol can't actually be found in the response object -->
   <li>Protocol: http</li>
-  <li>Response Code: {{ res.status }}</li>
+  <li>Response Code: {{ response.status }}</li>
   <li>Headers:
     <ul>
-      {% for key, val in res.headers.items() %}
+      {% for key, val in response.headers.items() %}
         <li>{{ key }}: {{ val }}</li>
       {% endfor %}
     </ul>
   </li>
   <li>Body:
-    <p>{{ res.get_data(as_text=True) }}</p>
+    <p>{{ response.get_data(as_text=True) }}</p>
   </li>
 </ul>
 {% endblock %}
