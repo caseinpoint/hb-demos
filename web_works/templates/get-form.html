@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title%}GET Form{% endblock %}
+
+{% block body %}
+<h2>Here's a GET form:</h2>
+<form action="/handle-get-form" method="GET">
+  <p>
+    <label for="name-input">What is your name?</label>
+    <input type="text" name="name" id="name-input">
+  </p>
+  <p>
+    <label for="quest-input">What is your quest?</label>
+    <input type="text" name="quest" id="quest-input">
+  </p>
+  <p>
+    <label for="color-input">What is your favorite color?</label>
+    <input type="text" name="color" id="color-input">
+  </p>
+  <input type="submit" value="GET">
+</form>
+{% endblock %}
+
+{% block next %}{% endblock %}

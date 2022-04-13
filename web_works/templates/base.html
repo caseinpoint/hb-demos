@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Request Data{% endblock %}</title>
+</head>
+<body>
+  {% block body %}{% endblock %}
+  <h3>Here's your request data:</h3>
+  <ul>
+    <li>Method: {{ req_method }}</li>
+    <li>Protocol: {{ req_protocol }}</li>
+    <li>URL: {{ req_url }}</li>
+    <li>Headers:
+      <ul>
+      {% for tpl in req_headers %}
+        <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
+      {% endfor %}
+      </ul>
+    </li>
+    {% if req_body is defined %}
+    <li>Body:
+      <ul>
+        {% for tpl in req_body.items() %}
+          <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endif %}
+  </ul>
+  {% block next %}<a href="/get-form">Let's look at forms next</a>{% endblock %}
+</body>
+</html>

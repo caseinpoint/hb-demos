@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title%}Response{% endblock %}
+
+{% block body %}
+<h2>Here's your response data:</h2>
+<ul>
+  <li>Protocol: {{ res_protocol }}</li>
+  <li>Response Code: {{ res_code }}</li>
+  <li>Headers:
+    <ul>
+      {% for tpl in res_headers %}
+        <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>Body:
+    <p>{{ res_body }}</p>
+  </li>
+</ul>
+{% endblock %}
+
+{% block next %}
+<a href="/redirect">Redirect demo</a>
+{% endblock %}
