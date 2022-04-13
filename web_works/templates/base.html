@@ -23,9 +23,9 @@
     {% if rqst.form|length > 0 %}
     <li>Body:
       <ul>
-        {% for tpl in rqst.form.items() %}
-          <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
-        {% endfor %}
+      {% for key, val in rqst.form.items() %}
+        <li>{{ key] }}: {{ val }}</li>
+      {% endfor %}
       </ul>
     </li>
     {% endif %}
