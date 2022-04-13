@@ -10,21 +10,14 @@ def show_request_data():
     return render_template('base.html', rqst=request)
 
 
-@app.route('/get-form')
-def show_get_form():
+@app.route('/form/<method>')
+def show_get_form(method):
     """Show a GET form and the request object."""
 
-    return render_template('form.html', rqst=request, method='GET')
+    return render_template('form.html', rqst=request, method=method.upper())
 
 
-@app.route('/post-form')
-def show_post_form():
-    """Show a POST form and the request object."""
-
-    return render_template('form.html', rqst=request, method='POST')
-
-
-@app.route('/handle-form', methods=['GET', 'POST'])
+@app.route('/form/submit', methods=['GET', 'POST'])
 def handle_get_form():
     """Show form data and the request object."""
 
@@ -32,7 +25,7 @@ def handle_get_form():
         form_data = {'name': request.args.get('name'),
                     'quest': request.args.get('quest'),
                     'color': request.args.get('color'),
-                    'next': '/post-form'}
+                    'next': '/form/POST'}
 
     else:
         form_data = {'name': request.form.get('name'),
