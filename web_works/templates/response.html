@@ -5,17 +5,18 @@
 {% block body %}
 <h2>Here's your response data:</h2>
 <ul>
-  <li>Protocol: {{ res_protocol }}</li>
-  <li>Response Code: {{ res_code }}</li>
+  <!-- protocol can't actually be found in the response object -->
+  <li>Protocol: http</li>
+  <li>Response Code: {{ res.status }}</li>
   <li>Headers:
     <ul>
-      {% for tpl in res_headers.items() %}
-        <li>{{ tpl[0] }}: {{ tpl[1] }}</li>
+      {% for key, val in res.headers.items() %}
+        <li>{{ key }}: {{ val }}</li>
       {% endfor %}
     </ul>
   </li>
   <li>Body:
-    <p>{{ res_body }}</p>
+    <p>{{ res.get_data(as_text=True) }}</p>
   </li>
 </ul>
 {% endblock %}
