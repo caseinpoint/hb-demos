@@ -24,7 +24,11 @@
     <li>Body:
       <ul>
       {% for key, val in request.form.items() %}
+        {% if request.form.getlist(key)|length > 1 %}
+        <li>{{ key }}: {{ request.form.getlist(key) }}</li>
+        {% else %}
         <li>{{ key }}: {{ val }}</li>
+        {% endif %}
       {% endfor %}
       </ul>
     </li>
