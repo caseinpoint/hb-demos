@@ -1,0 +1,39 @@
+
+Test expected results from hd.json:
+
+
+    >>> import json
+    >>> print("x ", open("hd.json").read())  # doctest: +ELLIPSIS
+    x ...
+     "resultCount":50,
+     "results": [
+    {"wrapperType"...
+
+    >>> json.loads(open("hd.json").read())  # doctest: +ELLIPSIS
+    ...
+    {'resultCount': 50, 'results': [{'...
+
+Test itunes-search.py:
+    >>> exec(open('itunes-search.py').read())  # doctest: +ELLIPSIS
+    H...
+    Honeydew ...
+
+Test nested.py:
+    >>> import nested  # doctest: +ELLIPSIS
+    <BLANKLINE>
+    <BLANKLINE>
+    printing:
+    {'a': [{'apple': 5, 'arugula': 7}, {'alligator': 9, 'aardvark': 7}, {'america': 7, 'argentina': 9, 'angola': 7}], 'b': [{'banana': 6, 'berry': 5}, {'bird': 4, 'bonobo': 6, 'beluga': 6}, {'belize': 6, 'brazil': 6, 'belgium': 7}], 'c': [{'cantaloupe': 10, 'cherry': 6}, {'cougar': 6, 'cuttlefish': 10, 'cat': 3, 'canary': 6}, {'canada': 6, 'columbia': 8}]}
+    <BLANKLINE>
+    <BLANKLINE>
+    pretty printing:
+    {'a': [{'apple': 5, 'arugula': 7},
+           {'aardvark': 7, 'alligator': 9},
+           {'america': 7, 'angola': 7, 'argentina': 9}],
+     'b': [{'banana': 6, 'berry': 5},
+           {'beluga': 6, 'bird': 4, 'bonobo': 6},
+           {'belgium': 7, 'belize': 6, 'brazil': 6}],
+     'c': [{'cantaloupe': 10, 'cherry': 6},
+           {'canary': 6, 'cat': 3, 'cougar': 6, 'cuttlefish': 10},
+           {'canada': 6, 'columbia': 8}]}
+
