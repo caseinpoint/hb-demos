@@ -1,0 +1,29 @@
+.fancy {
+  font-family: cursive;
+}
+
+.lead {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.image-box {
+  margin: 4em 0;
+  height: 150px;
+}
+
+.image-box img {
+  height: 100%;
+}
+
+body > div:last-of-type {
+  margin-bottom: 800px;
+}
+
+.blog-content {
+  font-family: sans-serif;
+}
+
+.article {
+  font-family: monospace;
+}
