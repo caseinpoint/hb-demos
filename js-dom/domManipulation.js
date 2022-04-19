@@ -10,43 +10,48 @@
 // const confirmed = confirm('Hey, user, is this ok?');
 // console.log(`Confirmed? ${confirmed}`);
 
-// const promptAnswer = prompt('Enter a string');
+// let promptAnswer = prompt('Enter a string');
 // console.log(`Entered in "${promptAnswer}"`);
+
+// while (!promptAnswer) {
+//     promptAnswer = prompt('Enter a string');
+//     console.log(`Entered in "${promptAnswer}"`);
+// }
 
 
 /* querySelector */
 
-// const firstPTag = document.querySelector('p');
+const firstPTag = document.querySelector('p.lead');
 // console.log('firstPTag', firstPTag);
 
-// const mainContent = document.querySelector('#main-content');
+const mainContent = document.querySelector('#main-content');
 // console.log('mainContent', mainContent);
 
 
 /* querySelectorAll */
 
-// const paragraphs = document.querySelectorAll('p');
+const paragraphs = document.querySelectorAll('p');
 // console.log('paragraphs', paragraphs);
 
 
 /* manipulating the DOM */
 
-// const aboutLink = document.querySelector('a');
+const aboutLink = document.querySelector('a');
 // console.log(`aboutLink.innerHTML: ${aboutLink.innerHTML}`);
-// aboutLink.innerHTML = 'About Me';
+aboutLink.innerHTML = 'About Me';
 
 // mainContent.innerHTML = 'Something else';
 
-// const catPhoto = document.querySelector('img');
-// console.log('catPhoto src', catPhoto.getAttribute('src'));
+const catPhoto = document.querySelector('img');
 // catPhoto.setAttribute('src', 'cat2.gif');
 // console.log('catPhoto', catPhoto);
-// catPhoto.src = 'cat2.gif'
+catPhoto.src = 'cat2.gif';
+// console.log('catPhoto src', catPhoto.getAttribute('src'));
 
 
 /* classList */
 
-// const blogContainer = document.querySelector('div');
+const blogContainer = document.querySelector('div');
 // remember: first div
 // console.log('blogContainer.classList', blogContainer.classList);
 // blogContainer.classList.remove('blog-content');
@@ -57,19 +62,21 @@
 // console.log('contains fancy?',
 //     mainContent.classList.contains('fancy'));
 // mainContent.classList.remove('fancy');
+// console.log('contains fancy?',
+//     mainContent.classList.contains('fancy'));
 
-// for (const p of paragraphs) {
-//   p.classList.add('fancy');
-// }
+for (const p of paragraphs) {
+  p.classList.add('fancy');
+}
 
 
 /* insertAdjacentHTML */
 
-// const firstUL = document.querySelector('ul');
-// firstUL.insertAdjacentHTML('beforeend',
-//     '<li>Finish homework</li>');
-// firstUL.insertAdjacentHTML('afterbegin',
-//     '<li>Learn about the DOM</li>');
+const firstUL = document.querySelector('ul');
+firstUL.insertAdjacentHTML('afterbegin',
+    '<li>Learn about the DOM</li>');
+firstUL.insertAdjacentHTML('beforeend',
+    '<li>Finish homework</li>');
 
 
 /* remove */
@@ -78,29 +85,38 @@
 // while (firstUL.firstChild) {
 //     firstUL.firstChild.remove();
 // }
+for (const li of firstUL.children) {
+    if (li.innerHTML === 'Finish homework') {
+        console.log(li);
+        li.remove();
+    }
+}
 
 
 /* show/hide */
 
-// catPhoto.style.display = 'none';
-// catPhoto.style.display = '';
+catPhoto.style.display = 'none';
+catPhoto.style.display = '';
 
 
-/* function */
+/* function (preview) */
 
-// function makeEverythingBlue() {
-//     const allH1Tags = document.querySelectorAll('h1');
-//     for (const hTag of allH1Tags) {
-//         hTag.style.color = 'blue';
-//     }
+function makeEverythingBlue() {
+    const allH1Tags = document.querySelectorAll('h1');
+    for (const hTag of allH1Tags) {
+        hTag.style.color = 'blue';
+    }
 
-//     const allPTags = document.querySelectorAll('p');
-//     for (const pTag of allPTags) {
-//         pTag.style.color = 'blue';
-//     }
+    const allPTags = document.querySelectorAll('p');
+    for (const pTag of allPTags) {
+        pTag.style.color = 'blue';
+    }
 
-//     const allLiTags = document.querySelectorAll('li');
-//     for (const liTag of allLiTags) {
-//         liTag.style.color = 'blue';
-//     }
-// }
+    const allLiTags = document.querySelectorAll('li');
+    for (const liTag of allLiTags) {
+        liTag.style.color = 'blue';
+    }
+
+    const bdy = document.querySelector('body');
+    bdy.classList.add('dark-background');
+}

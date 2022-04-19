@@ -26,4 +26,10 @@ body > div:last-of-type {
 
 .article {
   font-family: monospace;
+  font-weight: bold;
+  color: red;
+}
+
+.dark-background {
+  background-color: black;
 }
