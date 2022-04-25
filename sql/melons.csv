@@ -1,0 +1,25 @@
+id,melon_type,common_name,price,imgurl,seedless
+1,Musk,Honeydew,1.00,/static/1.jpg,FALSE
+2,Hybrid,Crenshaw,2.00,/static/2.jpg,FALSE
+3,Hybrid,Crane,2.50,/static/3.jpg,FALSE
+4,Musk,Casaba,2.50,/static/4.jpg,FALSE
+5,Musk,Cantaloupe,0.99,/static/5.jpg,FALSE
+6,Musk,Persian Melon,3.00,/static/6.jpg,FALSE
+7,Musk,Christmas Melon,5.50,/static/7.jpg,FALSE
+8,Musk,Armenian Cucumber,4.50,/static/8.jpg,FALSE
+9,Hybrid,Galia,3.75,/static/9.jpg,FALSE
+10,Winter,Winter Melon,0.99,/static/10.jpg,TRUE
+11,Musk,Canary,1.50,/static/11.jpg,FALSE
+12,Musk,Hami,2.75,/static/12.jpg,TRUE
+13,Watermelon,Densuke,250.00,/static/13.jpg,FALSE
+14,Watermelon,Ali Baba,2.50,/static/14.jpg,FALSE
+15,Watermelon,Ancient,3.00,/static/15.jpg,FALSE
+16,Watermelon,Arkansas Black,4.00,/static/16.jpg,FALSE
+17,Watermelon,Dixie Queen,2.00,/static/28.jpg,FALSE
+18,Watermelon,Blacktail Mountain,2.75,/static/18.jpg,TRUE
+19,Watermelon,Carolina Cross 180,4.25,/static/19.jpg,FALSE
+20,Watermelon,Charleston Gray,2.00,/static/20.jpg,FALSE
+21,Watermelon,Chris Cross,2.50,/static/21.jpg,FALSE
+22,Watermelon,Desert King,2.00,/static/27.jpg,FALSE
+23,Watermelon,Congo,2.00,/static/23.jpg,FALSE
+24,Watermelon,Crimson Sweet,1.75,/static/25.jpg,FALSE
