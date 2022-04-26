@@ -1,0 +1,36 @@
+Test demo file.
+    >>> from demo import *
+    >>> import os
+
+    >>> os.system('dropdb testcats --if-exists')
+    0
+
+    >>> os.system('createdb testcats')
+    0
+
+    >>> connect_to_db(app, 'testcats')
+    >>> app.config['SQLALCHEMY_ECHO'] = False
+    >>> app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    >>> db.create_all()
+    >>> auden = Cat(name='Auden', color='grey')
+    >>> felix = Cat(name='Felix', color='grey', hunger=10)
+    >>> ezra = Cat(name='Ezra', color='orange')
+
+    >>> db.session.add(auden)
+    >>> db.session.add(felix)
+    >>> db.session.add(ezra)
+
+    >>> db.session.commit()
+
+    >>> Cat.query.filter(Cat.color == 'grey').all()
+    [<Cat id=1 name=Auden color=grey hunger=20>, <Cat id=2 name=Felix color=grey hunger=10>]
+    >>> ezra.feed()
+    >>> db.session.commit()
+    >>> Cat.query.filter(Cat.name=='Ezra').one()
+    <Cat id=3 name=Ezra color=orange hunger=10>
+
+Clean up
+    >>> db.session.close()
+    >>> db.engine.dispose()
+    >>> os.system('dropdb testcats')
+    0
