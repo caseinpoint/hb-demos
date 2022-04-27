@@ -31,6 +31,10 @@ class SameNumber(Number):
         >>> sn = SameNumber(1)
         >>> sn.add(1).result()
         2
+
+        Keep in mind that add() mutates the instance, so if we run it again:
+        >>> sn.add(1).result()
+        3
         """
 
         self.value += num
