@@ -1,5 +1,6 @@
 Test demo file.
-    >>> from demo import *
+    >>> from model import *
+    >>> from server import app
     >>> import os
 
     >>> os.system('dropdb testcats --if-exists')
@@ -9,6 +10,7 @@ Test demo file.
     0
 
     >>> connect_to_db(app, 'testcats')
+    Connecting to db... Connected!
     >>> app.config['SQLALCHEMY_ECHO'] = False
     >>> app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     >>> db.create_all()
@@ -23,11 +25,11 @@ Test demo file.
     >>> db.session.commit()
 
     >>> Cat.query.filter(Cat.color == 'grey').all()
-    [<Cat id=1 name=Auden color=grey hunger=20>, <Cat id=2 name=Felix color=grey hunger=10>]
+    [<Cat id=1 name=Auden>, <Cat id=2 name=Felix>]
     >>> ezra.feed()
     >>> db.session.commit()
     >>> Cat.query.filter(Cat.name=='Ezra').one()
-    <Cat id=3 name=Ezra color=orange hunger=10>
+    <Cat id=3 name=Ezra>
 
 Clean up
     >>> db.session.close()
