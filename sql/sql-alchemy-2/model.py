@@ -149,9 +149,9 @@ def phone_dir_join_full_join():
 
     print
     for emp, dept in emps:
-        if emp is not None and dept is not None:
+        if emp and dept:
             print(f"{emp.name:8} {dept.dept_name:11} {dept.phone}")
-        elif emp is not None and dept is None:
+        elif emp and not dept:
             print(f"{emp.name:8} {'-':11} {'-'}")
         else:
             print(f"{'-':8} {dept.dept_name:11} {dept.phone}")
