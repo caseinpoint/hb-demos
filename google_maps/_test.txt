@@ -1,0 +1,37 @@
+Set up db
+    >>> from server import db, connect_to_db, app
+    >>> from seed import get_bears
+    >>> import os
+
+    >>> drop = os.system("dropdb bears --if-exists")
+    >>> os.system("createdb bears")
+
+Create tables and populate database. Only 50 bears are added to the db.
+    >>> connect_to_db(app)
+    >>> db.create_all()
+    >>> get_bears()
+    0 bears have been added to this database
+    10 bears have been added to this database
+    20 bears have been added to this database
+    30 bears have been added to this database
+    40 bears have been added to this database
+    50 bears have been added to this database
+
+Check bear data route
+    >>> client = app.test_client()
+    >>> r = client.get('/bears.json')
+    >>> assert b'["1":{"bearId":"1737","birthYear":"1970",' in r.data
+
+Links to demos are in index
+    >>> r = client.get('/')
+    >>> assert b'<a href="/map/basic">' in r.data
+    >>> assert b'<a href="/map/bears">' in r.data
+
+API Key has been sanitized from Google Maps import
+    >>> r = client.get('/map/basic')
+    >>> assert b '/api/js?key=YOUR_API_KEY_HERE&callback' in r.data
+
+Clean up
+    >>> db.session.close()
+    >>> db.engine.dispose()
+    >>> drop = os.system("dropdb bears")

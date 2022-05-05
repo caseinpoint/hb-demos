@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/css/maps.css">
+  <link rel="stylesheet" href="/static/css/bears.css">
+
+{% endblock %}
+
+{% block body %}
+  <nav>
+    <section id="links-right">
+      <a href="/">home</a>
+    </section>
+  </nav>
+
+  <section class="map">
+    <div id="map"></div>
+  </section>
+
+  <script src="/static/js/mapStyles.js"></script>
+  <script src="/static/js/bears.js"></script>
+  <script
+    async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7QPR1mX-nOMO6PavtZH5FdpTW6Xhy_LA&callback=initMap">
+  </script>
+  
+{% endblock %}

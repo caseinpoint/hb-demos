@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav {
+  display: flex;
+  background: rgb(88, 89, 91);
+}
+
+nav p,
+nav a,
+nav button {
+  display: inline-block;
+  color: white;
+  padding: 0;
+  margin: 0.5em;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+nav a,
+nav button {
+  background: transparent;
+  background: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid white;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav button:hover {
+  cursor: pointer;
+  border-bottom: 0;
+  color: yellow;
+}
+
+#links-right {
+  margin-left: auto;
+}
