@@ -1,7 +1,7 @@
 'use strict';
 
 const handleInput = (evt) => {
-    const query = document.querySelector('#query').value;
+    const query = evt.target.value;
     if (query.length > 0) {
         const queryString = new URLSearchParams({ query }).toString();
 
