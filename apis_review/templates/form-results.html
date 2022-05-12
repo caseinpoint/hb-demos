@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Form Results{% endblock %}
+
+{% block body %}
+  <div class="row">
+    {% for res in results %}
+      <div class="card mx-auto mb-2" style="width: 18rem;">
+        <img class="card-img-top"
+        {% if 'photos' in res %}
+          src="{{ photos_url }}{{ res['photos'][0]['photo_reference'] }}"
+          alt="{{ res['name'] }} image"
+        {% else %}
+          src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+          alt="default image"
+        {% endif %}>
+
+        <div class="card-body">
+          <h5 class="card-title">{{ res['name'] }}</h5>
+          <p class="card-text">{{ res['formatted_address'] }}</p>
+          <p class="card-text">
+            Lat.: {{ res['geometry']['location']['lat'] }}<br>
+            Long.: {{ res['geometry']['location']['lng'] }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

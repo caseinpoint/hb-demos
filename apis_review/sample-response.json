@@ -1,0 +1,108 @@
+[
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "400 40th St, Oakland, CA 94609, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.8285946,
+                "lng": -122.2599287
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 37.82989307989271,
+                    "lng": -122.2586351701073
+                },
+                "southwest": {
+                    "lat": 37.82719342010727,
+                    "lng": -122.2613348298927
+                }
+            }
+        },
+        "icon": "https: //maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+        "name": "Homeroom",
+        "opening_hours": {
+            "open_now": True
+        },
+        "photos": [
+            {
+                "height": 3036,
+                "html_attributions": [
+                    "<a href='https://maps.google.com/maps/contrib/109071814131467371879'>bradbrad818</a>"
+                ],
+                "photo_reference": "Aap_uECDaCtwuJZNxB4JI4AI8MdDrK_KzS-M4LhXx30s8SB9gG7bzAkza6rkM4H_5tEsqAIFP9P0QFoy5IexLQeQc2bV68amyIfmjNEjSxxJtQ6xe-cQfi4L7cJDbVBwf37R3C5M9i4OxDMWshSA9rdOUz0P1GkBbztnxbqvDrHVqiB21aRg",
+                "width": 4048
+            }
+        ],
+        "place_id": "ChIJeZcMg_x9hYARMvMaN9kx24Y",
+        "plus_code": {
+            "compound_code": "RPHR+C2 Oakland, California",
+            "global_code": "849VRPHR+C2"
+        },
+        "price_level": 2,
+        "rating": 4.5,
+        "reference": "ChIJeZcMg_x9hYARMvMaN9kx24Y",
+        "types": [
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "user_ratings_total": 2560
+    },
+    {
+        "business_status": "OPERATIONAL",
+        "formatted_address": "4007 Webster St, Oakland, CA 94609, United States",
+        "geometry": {
+            "location": {
+                "lat": 37.8288544,
+                "lng": -122.2609501
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 37.83018892989271,
+                    "lng": -122.2595125701073
+                },
+                "southwest": {
+                    "lat": 37.82748927010727,
+                    "lng": -122.2622122298927
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+        "name": "Homeroom To Go",
+        "opening_hours": {
+            "open_now": True
+        },
+        "photos": [
+            {
+                "height": 2550,
+                "html_attributions": [
+                    "<a href='https://maps.google.com/maps/contrib/102911248830928854242'>Homeroom To Go</a>"
+                ],
+                "photo_reference": "Aap_uEDDQMSqpoHghDHUV0sf3BH-PYC4V1QzpsiEeEjXHpv6XpQxMj71myrb1AVYyNK5jNMgpI33CJPDQ7RVbCdLPjAoD4gvFFLnePxHY1_piLU39pDMfoPoS3s9xjxu6m9J2pz8GOLpMX8Qua8UanKS4MhOerGKieKSEMN-xbhdB-bhFtXb",
+                "width": 3300
+            }
+        ],
+        "place_id": "ChIJrbxBlPx9hYAR7FosxVlw5BA",
+        "plus_code": {
+            "compound_code": "RPHQ+GJ Oakland, California",
+            "global_code": "849VRPHQ+GJ"
+        },
+        "price_level": 2,
+        "rating": 4.4,
+        "reference": "ChIJrbxBlPx9hYAR7FosxVlw5BA",
+        "types": [
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "user_ratings_total": 577
+    }
+]
