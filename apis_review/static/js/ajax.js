@@ -15,7 +15,7 @@ const handleForm = (evt) => {
         resultsDiv.innerHTML = '';
 
         for (const res of resultsJSON.results) {
-            let src = 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg';
+            let src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/167px-Google_Maps_icon_%282020%29.svg.png';
             let alt = 'default image';
             if ('photos' in res) {
                 src = resultsJSON.photos_url + res.photos[0].photo_reference;
