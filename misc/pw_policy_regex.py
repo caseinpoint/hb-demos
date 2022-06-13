@@ -4,7 +4,7 @@ PW_REGEX = compile(r'(?P<min>\d)-(?P<max>\d) (?P<char>[a-z]): (?P<pw>[a-z]+)')
 
 
 def parse_password(pw_str):
-    """Return min, max, character and password using REGEX."""
+    """Return min, max, character and password using PW_REGEX."""
 
     match_obj = PW_REGEX.fullmatch(pw_str)
     match_dict = match_obj.groupdict()
