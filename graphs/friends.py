@@ -26,6 +26,27 @@ class PersonNode:
 
         return f"<PersonNode: {self.name}>"
 
+    def __eq__(self, other):
+        """Override equality method for use with == and hash()."""
+
+        # if other is not a PersonNode it can't be equal to self
+        if not isinstance(other, PersonNode):
+            return False
+
+        # PersonNodes are only equal if name, species and birdate are all equal
+        return (self.name == other.name and
+                self.species == other.species and
+                self.birthdate == other.birthdate)
+
+    def __hash__(self):
+        """Override default hash method.
+        
+        See
+        https://docs.python.org/3/reference/datamodel.html#object.__hash__
+        for reference."""
+
+        return hash((self.name, self.species, self.birthdate))
+
 
 class FriendGraph:
     """Graph holding people and their friendships."""
