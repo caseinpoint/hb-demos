@@ -1,20 +1,24 @@
 """Example of an undirected graph."""
 
 from collections import deque
+from datetime import date
 
 
 class PersonNode:
     """Node in a graph representing a person."""
 
-    def __init__(self, name, adjacent=None):
+    def __init__(self, name, species, birthdate, adjacent=None):
         """Create a person node with friends adjacent"""
 
         if adjacent is None:
             adjacent = set()
 
         assert isinstance(adjacent, set), "adjacent must be a set!"
+        assert isinstance(birthdate, date), "birthdate must be a date!"
 
         self.name = name
+        self.species = species
+        self.birthdate = birthdate
         self.adjacent = adjacent
 
     def __repr__(self):
@@ -136,16 +140,16 @@ class FriendGraph:
         return False
 
 
-# Add sample friends
-ankha = PersonNode("Ankha")
-canberra = PersonNode("Canberra")
-beau = PersonNode("Beau")
-drake = PersonNode("Drake")
-genji = PersonNode("Genji")
-erik = PersonNode("Erik")
-hamphrey = PersonNode("Hamphrey")
-ike = PersonNode("Ike")
-jay = PersonNode("Jay")
+# Add sample friends (apparently from Animal Crossing)
+ankha = PersonNode("Ankha", "Cat", date(2002, 9, 22))
+canberra = PersonNode("Canberra", "Koala", date(2002, 5, 14))
+beau = PersonNode("Beau", "Deer", date(2002, 4, 5))
+drake = PersonNode("Drake", "Duck", date(2002, 6, 25))
+genji = PersonNode("Genji", "Rabbit", date(2002, 1, 21))
+erik = PersonNode("Erik", "Deer", date(2002, 7, 27))
+hamphrey = PersonNode("Hamphrey", "Hamster", date(2002, 2, 25))
+ike = PersonNode("Ike", "Bear", date(2002, 4, 16))
+jay = PersonNode("Jay", "Bird", date(2002, 7, 17))
 
 friends = FriendGraph()
 friends.add_people([ankha, canberra, beau, drake, erik, hamphrey, ike, jay])
