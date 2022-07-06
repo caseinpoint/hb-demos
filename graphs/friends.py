@@ -97,16 +97,21 @@ class FriendGraph:
         while len(possible_nodes) > 0:
             person = possible_nodes.popleft()
             print("checking", person)
-            if person is person2:
+
+            # We can use == thanks to PersonNode.__eq__()
+            if person == person2:
                 return True
             else:
-                # for friend in person.adjacent - seen:
+                # check if each friend not in seen
+                # for friend in person.adjacent:
+                #     if friend not in seen:
 
-                for friend in person.adjacent:
-                    if friend not in seen:
-                        possible_nodes.append(friend)
-                        seen.add(friend)
-                        print("added to queue:", friend)
+                # or use set math
+                for friend in person.adjacent - seen:
+                    possible_nodes.append(friend)
+                    seen.add(friend)
+                    print("added to queue:", friend)
+
         return False
 
     def are_connected_recursive(self, person1, person2, seen=None):
@@ -115,14 +120,16 @@ class FriendGraph:
         if seen is None:
             seen = set()
 
-        if person1 is person2:
+        # We can use == thanks to PersonNode.__eq__()
+        if person1 == person2:
             return True
 
         seen.add(person1)  # Keep track that we've visited here
-        print("adding", person1)
-        # check that seen is the same as other recursive calls
-        print("id of seen:", id(seen))
-        print("seen:", seen, '\n')
+        print("adding", person1, "to seen")
+
+        # Check that seen is the same as other recursive calls
+        # print("id of seen:", id(seen))
+        # print("seen:", seen, '\n')
 
         for person in person1.adjacent:
 
@@ -136,28 +143,29 @@ class FriendGraph:
     def verbose_are_connected_recursive(self, person1, person2, seen=None):
         """Are two people friends? Recursive depth-first search."""
 
-        if not seen:
+        if seen is None:
             seen = set()
 
-        if person1 is person2:
-            print(f"\nreturning True - {person1.name} is {person2.name}")
+        # We can use == thanks to PersonNode.__eq__()
+        if person1 == person2:
+            print(f"\nreturning True - {person1} == {person2}")
             return True
 
         seen.add(person1)  # Keep track that we've visited here
-        print("adding", person1)
+        print("adding", person1, "to seen")
 
         for person in person1.adjacent:
 
             if person not in seen:
 
                 print(
-                    f"calling method on {person1.name}'s friend {person.name} with {person2.name}"
+                    f"calling method on {person1}'s friend {person} with {person2}"
                 )
                 if self.verbose_are_connected_recursive(person, person2, seen):
-                    print(f"\nreturning True from checking {person.name}")
+                    print(f"\nreturning True from checking {person}")
                     return True
 
-        print(f"returning False from checking {person1.name}")
+        print(f"returning False from checking {person1}")
         return False
 
 
