@@ -101,13 +101,15 @@ class FriendGraph:
             # We can use == thanks to PersonNode.__eq__()
             if person == person2:
                 return True
+
             else:
-                # check if each friend not in seen
+                # Use set math
+                for friend in person.adjacent - seen:
+
+                # Or check if each friend not in seen
                 # for friend in person.adjacent:
                 #     if friend not in seen:
 
-                # or use set math
-                for friend in person.adjacent - seen:
                     possible_nodes.append(friend)
                     seen.add(friend)
                     print("added to queue:", friend)
@@ -127,14 +129,8 @@ class FriendGraph:
         seen.add(person1)  # Keep track that we've visited here
         print("adding", person1, "to seen")
 
-        # Check that seen is the same as other recursive calls
-        # print("id of seen:", id(seen))
-        # print("seen:", seen, '\n')
-
         for person in person1.adjacent:
-
             if person not in seen:
-
                 if self.are_connected_recursive(person, person2, seen):
                     return True
 
@@ -153,6 +149,10 @@ class FriendGraph:
 
         seen.add(person1)  # Keep track that we've visited here
         print("adding", person1, "to seen")
+
+        # Check that seen is the same as previous recursive calls
+        # print("id of seen:", id(seen))
+        # print("current contents of seen:", seen)
 
         for person in person1.adjacent:
 
