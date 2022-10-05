@@ -1,19 +1,39 @@
-class Student:
+class Hackbrighter:
+    """A person at Hackbright."""
+
+    def __init__(self, name, role, pronouns='undeclared'):
+        """Initialize the attributes of a new Hackbrighter instance."""
+
+        self.name = name
+        self.pronouns = pronouns
+        self.role = role
+
+    def greet(self, greeting='Hey!'):
+        """Print a custom greeting from the Hackbrighter."""
+
+        print(f'{greeting} My name is {self.name}. My pronouns are {self.pronouns}.')
+
+
+class Student(Hackbrighter):
     """A student at Hackbright."""
 
-    hours_per_week = 40
+    hours_per_week = 50
 
-    def __init__(self, student_name, pronouns='undeclared'):
+    def __init__(self, student_name, pronouns='she/her'):
         """Initialize the attributes of a new Student instance."""
 
-        self.name = student_name
-        self.pronouns = pronouns
+        super().__init__(student_name, 'student', pronouns)
         self.grades = {}
 
     def __repr__(self):
         """Return a string representation of the Student instance."""
 
         return f'<class Student name={self.name}>'
+
+    def greet(self):
+        """Print a custom greeting from the student."""
+
+        super().greet('Hi there!')
 
     def add_grade(self, assignment_name, grade):
         """Add an assignment and grade to the student."""
@@ -28,18 +48,14 @@ class Student:
         # the graduate should greet everyone with their new name:
         self.greet()
 
-    def greet(self):
-        """Print a custome greeting from the student."""
-
-        print(f'Hi! My name is {self.name}. I\'m here {self.hours_per_week} hours per week.')
-
     def get_my_id(self):
         """Print the id of the Student instance."""
 
         print(id(self))
 
+
 # initialize a new Student instance:
-marie_claire = Student('Marie-Claire')
+marie_claire = Student('Marie-Claire', 'she/her')
 
 # now that the __init__ method assigns the instance attributes, we no longer
 # need to do this:
