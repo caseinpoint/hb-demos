@@ -1,39 +1,42 @@
-class Hackbrighter:
+class BaseHackbrighter:
     """A person at Hackbright."""
 
-    def __init__(self, name, role, pronouns='undeclared'):
+    greeting = 'Hey!'
+    role = None
+
+    def __init__(self, name, pronouns='undeclared'):
         """Initialize the attributes of a new Hackbrighter instance."""
 
         self.name = name
         self.pronouns = pronouns
-        self.role = role
 
-    def greet(self, greeting='Hey!'):
+    def greet(self):
         """Print a custom greeting from the Hackbrighter."""
 
-        print(f'{greeting} My name is {self.name}. My pronouns are {self.pronouns}.')
+        print(f'{self.greeting} My name is {self.name}. My pronouns are {self.pronouns}.')
 
 
-class Student(Hackbrighter):
+class Student(BaseHackbrighter):
     """A student at Hackbright."""
 
-    hours_per_week = 50
+    greeting = 'Hi there!'
+    role = 'Student'
 
-    def __init__(self, student_name, pronouns='she/her'):
+    def __init__(self, name, pronouns='she/her'):
         """Initialize the attributes of a new Student instance."""
 
-        super().__init__(student_name, 'student', pronouns)
+        super().__init__(name, pronouns)
+
+        # Grades are unique to the Student class, so that's why we should
+        # override the __init__ method. Grades are also unique to each
+        # individual student, so that's why it should be an instance attribute
+        # instead of a class attribute.
         self.grades = {}
 
     def __repr__(self):
         """Return a string representation of the Student instance."""
 
         return f'<class Student name={self.name}>'
-
-    def greet(self):
-        """Print a custom greeting from the student."""
-
-        super().greet('Hi there!')
 
     def add_grade(self, assignment_name, grade):
         """Add an assignment and grade to the student."""
@@ -52,6 +55,22 @@ class Student(Hackbrighter):
         """Print the id of the Student instance."""
 
         print(id(self))
+
+
+class Instructor(BaseHackbrighter):
+    """An instructor at Hackbright."""
+
+    greeting = 'Greetings and salutations!'
+    role = 'Instructor'
+
+    def __init__(self, name, pronouns='undeclared'):
+        """Initialize the attributes of a new Instructor instance."""
+
+        super().__init__(name, 'Instructor', pronouns)
+
+        # self.students should be a list of Student objects (composition
+        # rather than inheritance)
+        self.students = []
 
 
 # initialize a new Student instance:
