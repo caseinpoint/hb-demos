@@ -80,6 +80,19 @@ def get_resource(resource):
     return send_from_directory("static", resource)
 
 
+#- ADDITIONAL MAPBOX DEMO --------------------------------------------#
+@app.route('/map/mapbox')
+def view_mapbox():
+    """Demo of basic map with Mapbox"""
+
+    return render_template('map-mapbox.html')
+
+
+@app.route('/api/mapboxkey')
+def get_mapbox_key():
+    return MAPBOX_KEY
+
+
 if __name__ == "__main__":
     app.debug = True
     connect_to_db(app)
