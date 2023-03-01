@@ -3,6 +3,10 @@
 from jinja2 import StrictUndefined
 from flask import Flask, render_template, jsonify, send_from_directory
 from model import connect_to_db, db, Bear
+from os import environ
+
+GOOGLE_MAPS_KEY = environ['GOOGLE_KEY']
+MAPBOX_KEY = environ['MAPBOX_KEY']
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "ursusmaritimus"
@@ -25,7 +29,7 @@ def view_basic_map():
     - Showing polylines, directions, etc.
     """
 
-    return render_template("map-basic.html")
+    return render_template("map-basic.html", google_key=GOOGLE_MAPS_KEY)
 
 
 @app.route("/map/more")
@@ -37,14 +41,14 @@ def view_more_demos():
     - Showing polylines, directions, etc.
     """
 
-    return render_template("map-more.html")
+    return render_template("map-more.html", google_key=GOOGLE_MAPS_KEY)
 
 
 @app.route("/map/bears")
 def view_bear_map():
     """Show map of bears."""
 
-    return render_template("map-bears.html")
+    return render_template("map-bears.html", google_key=GOOGLE_MAPS_KEY)
 
 
 @app.route("/api/bears")
