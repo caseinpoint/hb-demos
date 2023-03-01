@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link
+    href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/css/maps.css">
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+{% endblock %}
+
+{% block body %}
+  <nav>
+    <section id="links-left">
+      <a href="/map/more">Check out the other demos!</a>
+    </section>
+    <section id="links-right">
+      <a href="/">home</a>
+    </section>
+  </nav>
+
+  <section class="map">
+    <div id="map"></div>
+  </section>
+
+  <script src="/static/js/mapMapbox.js"></script>
+{% endblock %}
