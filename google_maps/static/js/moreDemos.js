@@ -62,6 +62,11 @@ function initMap() {
         userInfo.open(map, userMarker);
       } else {
         alert(`Geocode was unsuccessful for the following reason: ${status}`);
+        map.setCenter({
+          lat: 37.601773,
+          lng: -122.20287,
+        });
+        map.setZoom(14);
       }
     });
   });

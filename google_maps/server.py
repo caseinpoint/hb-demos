@@ -2,7 +2,7 @@
 
 from jinja2 import StrictUndefined
 from flask import Flask, render_template, jsonify, send_from_directory
-from model import connect_to_db, db, Bear
+from model import connect_to_db, Bear
 from os import environ
 
 GOOGLE_MAPS_KEY = environ['GOOGLE_KEY']
@@ -80,7 +80,7 @@ def get_resource(resource):
     return send_from_directory("static", resource)
 
 
-#- ADDITIONAL MAPBOX DEMO --------------------------------------------#
+#- ADDITIONAL MAPBOX DEMO ---------------------------------------#
 @app.route('/map/mapbox')
 def view_mapbox():
     """Demo of basic map with Mapbox"""
@@ -90,6 +90,8 @@ def view_mapbox():
 
 @app.route('/api/mapboxkey')
 def get_mapbox_key():
+    """Return the Mapbox API key for use in fetch request and initMap"""
+
     return MAPBOX_KEY
 
 
