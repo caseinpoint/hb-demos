@@ -30,8 +30,9 @@ function Card(props) {
 
 
 function shuffleArray(arr) {
+	// shuffle array 3 times
 	const randomize = () => Math.random() - 0.5;
-	for (let i = 1; i <= 5; i++) {
+	for (let i = 1; i <= 3; i++) {
 		arr.sort(randomize)
 	}
 }
@@ -54,7 +55,7 @@ function CardDeck() {
 
 	const cardComponents = cards.length === 0 ?
 		(<p><span className="spinner-border"/> Loading...</p>) :
-		(cards.map((card, idx) => {
+		(cards.map((card) => {
 			return (
 				<Card
 					suit={card.suit}
@@ -85,7 +86,7 @@ function CardDeck() {
 
 
 function getRandomNum(max) {
-	/* get a random number between 1 and max, inclusive */
+	// get a random number between 1 and max, inclusive
 	return Math.ceil(Math.random() * max);
 }
 
