@@ -1,0 +1,314 @@
+[
+	{
+		"suit": "heart",
+		"name": "Ace",
+		"abrev": "A",
+		"value": 1
+	},
+	{
+		"suit": "heart",
+		"name": "Two",
+		"abrev": "2",
+		"value": 2
+	},
+	{
+		"suit": "heart",
+		"name": "Three",
+		"abrev": "3",
+		"value": 3
+	},
+	{
+		"suit": "heart",
+		"name": "Four",
+		"abrev": "4",
+		"value": 4
+	},
+	{
+		"suit": "heart",
+		"name": "Five",
+		"abrev": "5",
+		"value": 5
+	},
+	{
+		"suit": "heart",
+		"name": "Six",
+		"abrev": "6",
+		"value": 6
+	},
+	{
+		"suit": "heart",
+		"name": "Seven",
+		"abrev": "7",
+		"value": 7
+	},
+	{
+		"suit": "heart",
+		"name": "Eight",
+		"abrev": "8",
+		"value": 8
+	},
+	{
+		"suit": "heart",
+		"name": "Nine",
+		"abrev": "9",
+		"value": 9
+	},
+	{
+		"suit": "heart",
+		"name": "Ten",
+		"abrev": "10",
+		"value": 10
+	},
+	{
+		"suit": "heart",
+		"name": "Jack",
+		"abrev": "J",
+		"value": 11
+	},
+	{
+		"suit": "heart",
+		"name": "Queen",
+		"abrev": "Q",
+		"value": 12
+	},
+	{
+		"suit": "heart",
+		"name": "King",
+		"abrev": "K",
+		"value": 13
+	},
+	{
+		"suit": "spade",
+		"name": "Ace",
+		"abrev": "A",
+		"value": 1
+	},
+	{
+		"suit": "spade",
+		"name": "Two",
+		"abrev": "2",
+		"value": 2
+	},
+	{
+		"suit": "spade",
+		"name": "Three",
+		"abrev": "3",
+		"value": 3
+	},
+	{
+		"suit": "spade",
+		"name": "Four",
+		"abrev": "4",
+		"value": 4
+	},
+	{
+		"suit": "spade",
+		"name": "Five",
+		"abrev": "5",
+		"value": 5
+	},
+	{
+		"suit": "spade",
+		"name": "Six",
+		"abrev": "6",
+		"value": 6
+	},
+	{
+		"suit": "spade",
+		"name": "Seven",
+		"abrev": "7",
+		"value": 7
+	},
+	{
+		"suit": "spade",
+		"name": "Eight",
+		"abrev": "8",
+		"value": 8
+	},
+	{
+		"suit": "spade",
+		"name": "Nine",
+		"abrev": "9",
+		"value": 9
+	},
+	{
+		"suit": "spade",
+		"name": "Ten",
+		"abrev": "10",
+		"value": 10
+	},
+	{
+		"suit": "spade",
+		"name": "Jack",
+		"abrev": "J",
+		"value": 11
+	},
+	{
+		"suit": "spade",
+		"name": "Queen",
+		"abrev": "Q",
+		"value": 12
+	},
+	{
+		"suit": "spade",
+		"name": "King",
+		"abrev": "K",
+		"value": 13
+	},
+	{
+		"suit": "diamond",
+		"name": "Ace",
+		"abrev": "A",
+		"value": 1
+	},
+	{
+		"suit": "diamond",
+		"name": "Two",
+		"abrev": "2",
+		"value": 2
+	},
+	{
+		"suit": "diamond",
+		"name": "Three",
+		"abrev": "3",
+		"value": 3
+	},
+	{
+		"suit": "diamond",
+		"name": "Four",
+		"abrev": "4",
+		"value": 4
+	},
+	{
+		"suit": "diamond",
+		"name": "Five",
+		"abrev": "5",
+		"value": 5
+	},
+	{
+		"suit": "diamond",
+		"name": "Six",
+		"abrev": "6",
+		"value": 6
+	},
+	{
+		"suit": "diamond",
+		"name": "Seven",
+		"abrev": "7",
+		"value": 7
+	},
+	{
+		"suit": "diamond",
+		"name": "Eight",
+		"abrev": "8",
+		"value": 8
+	},
+	{
+		"suit": "diamond",
+		"name": "Nine",
+		"abrev": "9",
+		"value": 9
+	},
+	{
+		"suit": "diamond",
+		"name": "Ten",
+		"abrev": "10",
+		"value": 10
+	},
+	{
+		"suit": "diamond",
+		"name": "Jack",
+		"abrev": "J",
+		"value": 11
+	},
+	{
+		"suit": "diamond",
+		"name": "Queen",
+		"abrev": "Q",
+		"value": 12
+	},
+	{
+		"suit": "diamond",
+		"name": "King",
+		"abrev": "K",
+		"value": 13
+	},
+	{
+		"suit": "club",
+		"name": "Ace",
+		"abrev": "A",
+		"value": 1
+	},
+	{
+		"suit": "club",
+		"name": "Two",
+		"abrev": "2",
+		"value": 2
+	},
+	{
+		"suit": "club",
+		"name": "Three",
+		"abrev": "3",
+		"value": 3
+	},
+	{
+		"suit": "club",
+		"name": "Four",
+		"abrev": "4",
+		"value": 4
+	},
+	{
+		"suit": "club",
+		"name": "Five",
+		"abrev": "5",
+		"value": 5
+	},
+	{
+		"suit": "club",
+		"name": "Six",
+		"abrev": "6",
+		"value": 6
+	},
+	{
+		"suit": "club",
+		"name": "Seven",
+		"abrev": "7",
+		"value": 7
+	},
+	{
+		"suit": "club",
+		"name": "Eight",
+		"abrev": "8",
+		"value": 8
+	},
+	{
+		"suit": "club",
+		"name": "Nine",
+		"abrev": "9",
+		"value": 9
+	},
+	{
+		"suit": "club",
+		"name": "Ten",
+		"abrev": "10",
+		"value": 10
+	},
+	{
+		"suit": "club",
+		"name": "Jack",
+		"abrev": "J",
+		"value": 11
+	},
+	{
+		"suit": "club",
+		"name": "Queen",
+		"abrev": "Q",
+		"value": 12
+	},
+	{
+		"suit": "club",
+		"name": "King",
+		"abrev": "K",
+		"value": 13
+	}
+]
