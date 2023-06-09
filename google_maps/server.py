@@ -9,7 +9,7 @@ GOOGLE_MAPS_KEY = environ['GOOGLE_KEY']
 MAPBOX_KEY = environ['MAPBOX_KEY']
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "ursusmaritimus"
+app.config["SECRET_KEY"] = environ['FLASK_KEY']
 app.jinja_env.undefined = StrictUndefined
 
 #---------------------------------------------------------------------#

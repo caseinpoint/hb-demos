@@ -199,7 +199,7 @@ def setup_ll(length, single):
     return lst
 
 
-def print_ll_runtimes(single):
+def print_ll_runtimes(single=True):
     """Print average runtimes for LinkedList methods"""
 
     if single:

@@ -64,8 +64,8 @@ function initMap() {
           // custom icon
           url: '/static/img/marker.svg',
           scaledSize: {
-            width: 30,
-            height: 30,
+            width: 50,
+            height: 50,
           },
         },
       }),
