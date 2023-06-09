@@ -13,7 +13,7 @@ def index():
 @app.route('/api/cards.json')
 def get_cards():
 	# simulate slow api
-	sleep(3)
+	sleep(4)
 
 	file_path = Path('./static/json/cards.json')
 	return send_file(file_path, mimetype='application/json')
