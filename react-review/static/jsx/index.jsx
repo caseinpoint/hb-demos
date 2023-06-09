@@ -100,7 +100,7 @@ function Die(props) {
 
 	return (
 		<button
-			className="btn btn-success me-1 px-4"
+			className="btn btn-success me-2 px-4"
 			type="button"
 			onClick={roll}
 		>
