@@ -29,12 +29,13 @@ function Card(props) {
 }
 
 
-function shuffleArray(arr) {
-	// shuffle array 3 times
+function shuffleArray(arr, x) {
+	// shuffle array x times
 	const randomize = () => Math.random() - 0.5;
-	for (let i = 1; i <= 3; i++) {
+	for (let i = 1; i <= x; i++) {
 		arr.sort(randomize)
 	}
+	return arr;
 }
 
 function CardDeck() {
@@ -49,8 +50,8 @@ function CardDeck() {
 	}, []);
 
 	function shuffle() {
-		shuffleArray(cards);
-		setCards((current) => [...current]);
+		const shuffledCards = shuffleArray(cards, 5);
+		setCards([...shuffledCards]);
 	}
 
 	const cardComponents = cards.length === 0 ?
