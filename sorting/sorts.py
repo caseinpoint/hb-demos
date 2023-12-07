@@ -483,7 +483,7 @@ if __name__ == '__main__':
         heap_sort,
         counting_sort,
         timsort,
-        balloonicorn_sort,
+        # balloonicorn_sort,
     ]:
 
         print(f"{func.__name__:21}", end='')

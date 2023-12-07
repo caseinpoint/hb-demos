@@ -225,3 +225,12 @@ def print_ll_runtimes(single=True):
 
     res = get_average_time('ll.get_by_index(1_999_999)', setup_full)
     print(f'LL getting by index: {res} microseconds')
+
+
+if __name__ == '__main__':
+    from sys import argv
+
+    if argv[1] == 'single':
+        print_ll_runtimes(single=True)
+    elif argv[1] == 'double':
+        print_ll_runtimes(single=False)
