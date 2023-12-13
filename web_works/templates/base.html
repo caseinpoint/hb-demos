@@ -8,6 +8,7 @@
 </head>
 <body>
   {% block body %}{% endblock %}
+
   <h2>Here's your request data:</h2>
   <ul>
     <li>Method: {{ request.method }}</li>
@@ -15,25 +16,26 @@
     <li>URL: {{ request.url }}</li>
     <li>Headers:
       <ul>
-      {% for key, val in request.headers.items() %}
-        <li>{{ key }}: {{ val }}</li>
-      {% endfor %}
+        {% for key, val in request.headers.items() %}
+          <li>{{ key }}: {{ val }}</li>
+        {% endfor %}
       </ul>
     </li>
     {% if request.form|length > 0 %}
-    <li>Body:
-      <ul>
-      {% for key, val in request.form.items() %}
-        {% if request.form.getlist(key)|length > 1 %}
-        <li>{{ key }}: {{ request.form.getlist(key) }}</li>
-        {% else %}
-        <li>{{ key }}: {{ val }}</li>
-        {% endif %}
-      {% endfor %}
-      </ul>
-    </li>
+      <li>Body:
+        <ul>
+        {% for key, val in request.form.items() %}
+          {% if request.form.getlist(key)|length > 1 %}
+          <li>{{ key }}: {{ request.form.getlist(key) }}</li>
+          {% else %}
+          <li>{{ key }}: {{ val }}</li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </li>
     {% endif %}
   </ul>
-  {% block next %}<a href="/form/GET">Next: /form/GET</a>{% endblock %}
+
+  {% block next %}Next: <a href="/response">/response</a>{% endblock %}
 </body>
 </html>

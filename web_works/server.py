@@ -10,6 +10,16 @@ def show_request_data():
     return render_template('base.html')
 
 
+@app.route('/response')
+def show_response():
+    """Show a response object and the request object."""
+
+    rendered = render_template('base.html', request=request)
+    response = make_response(rendered)
+
+    return render_template('response.html', response=response, next='/form/GET')
+
+
 @app.route('/form/<method>')
 def show_get_form(method):
     """Show a GET/POST form and the request object."""
@@ -37,19 +47,9 @@ def handle_get_form():
                      'quest': request.form.get('quest'),
                      'color': request.form.get('color'),
                      'grenade': request.form.getlist('grenade'),
-                     'next': '/response'}
+                     'next': '/redirect'}
 
     return render_template('form-output.html', **form_data)
-
-
-@app.route('/response')
-def show_response():
-    """Show a response object and the request object."""
-
-    rendered = render_template('base.html', request=request)
-    response = make_response(rendered)
-
-    return render_template('response.html', response=response)
 
 
 @app.route('/redirect')
@@ -57,7 +57,7 @@ def demo_redirect():
     """Show a redirect response and the request object."""
 
     return render_template('response.html',
-                           response=redirect('/response'))
+                           response=redirect('/response'), next='#')
 
 
 if __name__ == '__main__':
