@@ -7,14 +7,14 @@ app = Flask(__name__)
 def show_request_data():
     """Show the main attributes of the request object."""
 
-    return render_template('base.html', request=request)
+    return render_template('base.html')
 
 
 @app.route('/form/<method>')
 def show_get_form(method):
     """Show a GET/POST form and the request object."""
 
-    return render_template('form.html', request=request, method=method.upper())
+    return render_template('form.html', method=method.upper())
 
 
 @app.route('/form/submit', methods=['GET', 'POST'])
@@ -39,7 +39,7 @@ def handle_get_form():
                      'grenade': request.form.getlist('grenade'),
                      'next': '/response'}
 
-    return render_template('form-output.html', request=request, **form_data)
+    return render_template('form-output.html', **form_data)
 
 
 @app.route('/response')
@@ -49,14 +49,14 @@ def show_response():
     rendered = render_template('base.html', request=request)
     response = make_response(rendered)
 
-    return render_template('response.html', request=request, response=response)
+    return render_template('response.html', response=response)
 
 
 @app.route('/redirect')
 def demo_redirect():
     """Show a redirect response and the request object."""
 
-    return render_template('response.html', request=request,
+    return render_template('response.html',
                            response=redirect('/response'))
 
 
