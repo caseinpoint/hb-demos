@@ -14,7 +14,7 @@ def show_request_data():
 def show_response():
     """Show a response object and the request object."""
 
-    rendered = render_template('base.html', request=request)
+    rendered = render_template('base.html')
     response = make_response(rendered)
 
     return render_template('response.html', response=response, next='/form/GET')
