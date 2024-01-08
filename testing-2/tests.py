@@ -20,6 +20,7 @@ class FlaskTestsBasic(TestCase):
         """Test homepage page."""
 
         result = self.client.get("/")
+        self.assertEqual(result.status_code, 200)
         self.assertIn(b"Welcome", result.data)
     
     def test_logout(self):
@@ -124,4 +125,4 @@ class FlaskTestsLoggedOut(TestCase):
 if __name__ == "__main__":
     import unittest
 
-    unittest.main()
+    unittest.main(verbosity=2)
