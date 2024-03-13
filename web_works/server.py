@@ -7,6 +7,8 @@ app = Flask(__name__)
 def show_request_data():
     """Show the main attributes of the request object."""
 
+    print(f'\ntype of request: {type(request)}\n')
+
     return render_template('base.html')
 
 
@@ -15,7 +17,10 @@ def show_response():
     """Show a response object and the request object."""
 
     rendered = render_template('base.html')
+    print(f'\ntype of rendered: {type(rendered)}')
+
     response = make_response(rendered)
+    print(f'type of response: {type(response)}\n')
 
     return render_template('response.html', response=response, next='/form/GET')
 
@@ -36,6 +41,8 @@ def handle_get_form():
     methods."""
 
     if request.method == 'GET':
+        print(f'\ntype of request.args: {type(request.args)}\n')
+
         form_data = {'name': request.args.get('name'),
                      'quest': request.args.get('quest'),
                      'color': request.args.get('color'),
@@ -43,6 +50,8 @@ def handle_get_form():
                      'next': '/form/POST'}
 
     else:
+        print(f'\ntype of request.form: {type(request.form)}\n')
+
         form_data = {'name': request.form.get('name'),
                      'quest': request.form.get('quest'),
                      'color': request.form.get('color'),
@@ -56,8 +65,11 @@ def handle_get_form():
 def demo_redirect():
     """Show a redirect response and the request object."""
 
+    redirect_obj = redirect('/response')
+    print(f'\ntype of redirect: {type(redirect_obj)}\n')
+
     return render_template('response.html',
-                           response=redirect('/response'), next='#')
+                           response=redirect_obj, next='#')
 
 
 if __name__ == '__main__':
