@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Register here:</h1>
+	<form id="register-form">
+		<label for="username-npt">Username:</label>
+		<input type="text" name="username" id="username-npt">
+		<br>
+
+		<label for="password-npt">Password:</label>
+		<input type="text" name="password" id="password-npt">
+		<br>
+
+		<label for="confirm-npt">Confirm Password:</label>
+		<input type="text" name="confirm" id="confirm-npt">
+		<br>
+
+		<button type="submit">Register</button>
+	</form>
+
+	<script>
+		function handleRegisterSubmit(evt) {
+			// get the password
+			const passwordElement = document.getElementById('password-npt');
+			const password = passwordElement.value;
+
+			// get the confirm password
+			const confirmPasswordElement = document.getElementById('confirm-npt');
+			const confirmPassword = confirmPasswordElement.value;
+
+			// check if password is not equal to confirm password
+			if (password !== confirmPassword) {
+				alert('Passwords do not match!');
+				// make sure the browser doesn't submit the form to the server
+				evt.preventDefault();
+			}
+		}
+
+		const registerForm = document.getElementById('register-form');
+		registerForm.addEventListener('submit', handleRegisterSubmit);
+	</script>
+</body>
+</html>
